@@ -188,6 +188,7 @@ namespace bfs.Repository.Storage.FileSystem
 			{
 				return _fileSystemProvider.IsStorageAmbientTransactionActive
 					&& !StorageTransactionScope.IsTopLevelScopeTransactionOwner
+					&& StorageTransactionScope.TopLevelScope != null
 					&& !StorageTransactionScope.TopLevelScope.IsNullScope;
 			}
 		}
